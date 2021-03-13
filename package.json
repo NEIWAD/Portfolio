@@ -11,12 +11,11 @@
     "@gridsome/transformer-json": "^0.2.1",
     "@gridsome/transformer-remark": "^0.6.4",
     "gridsome": "^0.7.0",
-    "gridsome-plugin-netlify-cms": "^1.0.9",
-    "netlify-cms": "^2.10.99"
+    "vue-mq": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
     "node-sass": "^5.0.0",
-    "sass-loader": "^11.0.1"
+    "sass-loader": "^10.1.1"
   }
 }

@@ -1,17 +1,21 @@
 <template>
-  <div class="layout dark:bg-gray-800">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/blog">Blog</g-link>
-      </nav>
-    </header>
-    <slot />
-    <footer>Footer</footer>
+  <div class="layout">
+    <Navigation />
+    <div class="layout__content" :class="$mq">
+      <slot />
+    </div>
+    <Footer />
   </div>
 </template>
+
+<script>
+import Navigation from "@/components/navigation/Navigation";
+export default {
+  components: {
+    Navigation,
+  },
+};
+</script>
 
 <static-query>
 query {
@@ -21,8 +25,18 @@ query {
 }
 </static-query>
 
-<style>
+<style lang="scss" scoped>
 .layout {
-  min-height: 100vh;
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .layout__content {
+    &.lg {
+      padding: 100px 160px;
+    }
+  }
 }
 </style>

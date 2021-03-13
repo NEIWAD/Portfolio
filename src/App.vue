@@ -6,16 +6,23 @@
 
 <script>
 export default {
-  mounted() {
-    document.documentElement.classList.add("dark");
+  metaInfo() {
+    return {
+      meta: [{ name: "canonical", content: "tetet" }],
+    };
   },
 };
 </script>
 
-<style scoped>
+<style>
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+}
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
 }
 </style>

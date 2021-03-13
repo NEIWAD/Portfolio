@@ -7,28 +7,41 @@ module.exports = {
       options: {
         path: "posts/**/*.md",
         typeName: "Posts",
+        remark: {},
+      },
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "projects/**/*.md",
+        typeName: "Projects",
+        refs: {
+          tags: "projectTags",
+        },
         remark: {
-          //Config options can be added here
+          //plugins: ["@gridsome/remark-prismjs"],
         },
       },
     },
     {
-      use: `gridsome-plugin-netlify-cms`,
+      use: "@gridsome/source-filesystem",
       options: {
-        publicPath: `/admin`,
-        modulePath: `src/admin/index.js`,
+        path: "projectTags/**/*.md",
+        typeName: "projectTags",
+        remark: {},
       },
     },
   ],
-  templates: {},
+  templates: {
+    Posts: "/blog/:year/:month/:title",
+    Projects: [
+      {
+        path: "/projects/:slug",
+        component: "./src/templates/Project.vue",
+      },
+    ],
+  },
   transformers: {
-    remark: {
-      externalLinksTarget: "_blank",
-      externalLinksRel: ["nofollow", "noopener", "noreferrer"],
-      anchorClassName: "icon icon-link",
-      plugins: [
-        // ...global plugins
-      ],
-    },
+    remark: {},
   },
 };
