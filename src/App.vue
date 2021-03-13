@@ -18,7 +18,10 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  font-family: "Raleway", sans-serif;
 }
+h2,
+p,
 a {
   margin: 0;
   padding: 0;

@@ -37,6 +37,9 @@ query {
     &.lg {
       padding: 100px 160px;
     }
+    &.sm {
+      padding: 100px 30px;
+    }
   }
 }
 </style>

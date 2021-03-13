@@ -31,5 +31,13 @@ nav {
     padding-left: 160px;
     padding-right: 160px;
   }
+  &.sm {
+    background-color: black;
+    .nav__right {
+      a {
+        color: white;
+      }
+    }
+  }
 }
 </style>

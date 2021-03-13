@@ -1,6 +1,6 @@
 <template>
-  <div class="tags">
-    <div class="tags-list">
+  <div class="tags" :class="$mq">
+    <div class="tags-list" :class="$mq">
       <div
         class="tags-list__item"
         v-for="tag in tags.map((t) => t.node)"
@@ -40,15 +40,25 @@ export default {
 .tags-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   .tags-list__item {
     padding: 6px 15px;
     margin-right: 10px;
     border: 2px solid black;
+    &:hover {
+      cursor: pointer;
+    }
     &.selected {
       background-color: black;
       p {
         color: white;
       }
+    }
+  }
+  &.sm {
+    .tags-list__item {
+      margin-right: 10px;
+      margin-bottom: 10px;
     }
   }
 }
