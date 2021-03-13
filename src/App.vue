@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  created() {
+  mounted() {
     document.documentElement.classList.add("dark");
   },
 };
