@@ -46,7 +46,7 @@ export default {
   components: {},
   metaInfo() {
     return {
-      title: this.$page.article.title,
+      title: this.$page.post.title,
     };
   },
 };
