@@ -6,11 +6,9 @@ module.exports = {
       use: "@gridsome/source-filesystem",
       options: {
         path: "posts/**/*.md",
-        typeName: "Post",
+        typeName: "Posts",
         remark: {
-          plugins: [
-            // ...local plugins
-          ],
+          //Config options can be added here
         },
       },
     },
@@ -22,14 +20,7 @@ module.exports = {
       },
     },
   ],
-  templates: {
-    Project: [
-      {
-        path: "/projects/:slug",
-        component: "./src/templates/Project.vue",
-      },
-    ],
-  },
+  templates: {},
   transformers: {
     remark: {
       externalLinksTarget: "_blank",
