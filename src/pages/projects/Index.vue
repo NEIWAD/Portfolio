@@ -24,6 +24,8 @@ query {
         title
         description
         path
+        start
+        end
         tags{
           id
           name

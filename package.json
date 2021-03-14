@@ -11,6 +11,7 @@
     "@gridsome/transformer-json": "^0.2.1",
     "@gridsome/transformer-remark": "^0.6.4",
     "gridsome": "^0.7.0",
+    "vue-moment": "^4.1.0",
     "vue-mq": "^1.0.1"
   },
   "devDependencies": {

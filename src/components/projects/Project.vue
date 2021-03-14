@@ -2,6 +2,9 @@
   <g-link :to="project.path" class="project-card">
     <div class="project-card__title">
       <h2>{{ project.title }}</h2>
+      <p class="project-card__title__date">
+        {{ project.start | moment("YYYY-MM") }}
+      </p>
     </div>
     <div class="project-card__tags" :class="$mq">
       <div
@@ -38,6 +41,10 @@ export default {
   .project-card__title {
     h2 {
       font-size: 30px;
+    }
+    .project-card__title__date {
+      font-size: 13px;
+      color: #d6d6d6;
     }
   }
   .project-card__tags {

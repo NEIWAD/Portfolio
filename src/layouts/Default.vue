@@ -10,9 +10,11 @@
 
 <script>
 import Navigation from "@/components/navigation/Navigation";
+import Footer from "@/components/footer/Footer";
 export default {
   components: {
     Navigation,
+    Footer,
   },
 };
 </script>
@@ -34,8 +36,12 @@ query {
     box-sizing: border-box;
   }
   .layout__content {
+    min-height: 100vh;
     &.lg {
       padding: 100px 160px;
+    }
+    &.md {
+      padding: 80px 60px;
     }
     &.sm {
       padding: 100px 30px;
