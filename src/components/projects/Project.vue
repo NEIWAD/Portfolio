@@ -38,7 +38,11 @@ export default {
   padding-left: 20px;
   background-color: white;
   border-left: 6px solid black;
+  transition-duration: 0.2s;
   .project-card__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     h2 {
       font-size: 30px;
     }
@@ -61,6 +65,9 @@ export default {
         color: white;
       }
     }
+  }
+  &:hover {
+    border-left: 6px solid $yellow;
   }
 }
 </style>

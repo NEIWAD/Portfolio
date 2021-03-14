@@ -16,16 +16,25 @@
       <h3>Links</h3>
       <div class="project__right__item__links">
         <g-link
+          v-if="$page.project.website"
           :to="$page.project.website"
           class="project__right__item__links__item"
         >
           Website
         </g-link>
         <g-link
+          v-if="$page.project.github"
           :to="$page.project.github"
           class="project__right__item__links__item"
         >
           Github
+        </g-link>
+        <g-link
+          v-if="$page.project.npm"
+          :to="$page.project.npm"
+          class="project__right__item__links__item"
+        >
+          NPM
         </g-link>
       </div>
     </div>
@@ -38,7 +47,8 @@
   top: 100px;
   width: 250px;
   right: 160px;
-  background-color: black;
+  border: 6px solid black;
+  background-color: $yellow;
   box-sizing: border-box;
   padding: 10px;
   .project__right__item {
@@ -46,19 +56,19 @@
     h3 {
       width: 100%;
       display: block;
-      color: white;
+      color: black;
       margin-bottom: 10px;
+      font-weight: 900;
     }
   }
-
   .project__right__tags {
     display: flex;
     flex-wrap: wrap;
-
     .project__right__tags__item {
       background-color: white;
       color: black;
       margin-right: 10px;
+      margin-bottom: 10px;
       padding: 4px 8px;
       font-size: 14px;
     }
