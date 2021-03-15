@@ -15,6 +15,9 @@ query ($path: String!) {
     content
     image
     description
+    website
+    github
+    npm
     tags{
       id
       name
@@ -40,8 +43,27 @@ export default {
 
 <style lang="scss" scoped>
 .project {
+  h1 {
+    position: relative;
+    width: fit-content;
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 8px;
+      width: 100%;
+      content: "";
+      background-color: $yellow;
+      z-index: -1;
+    }
+  }
   .project__left {
     width: calc(100% - 300px);
+  }
+  &.md {
+    .project__left {
+      width: 100%;
+    }
   }
 }
 </style>

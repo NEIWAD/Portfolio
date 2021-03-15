@@ -24,8 +24,7 @@ query {
         title
         description
         path
-        start
-        end
+        mandate
         tags{
           id
           name
@@ -96,6 +95,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  position: relative;
+  width: fit-content;
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 8px;
+    width: 100%;
+    content: "";
+    background-color: $yellow;
+    z-index: -1;
+  }
+}
 .projects__list {
   margin-top: 50px;
   display: grid;

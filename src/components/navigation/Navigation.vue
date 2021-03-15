@@ -4,9 +4,11 @@
       <g-link class="nav__link" to="/">NEIWAD</g-link>
     </div>
     <div class="nav__right" :class="$mq">
-      <g-link class="nav__link" to="/about">About</g-link>
-      <g-link class="nav__link" to="/projects">Projects</g-link>
-      <g-link class="nav__link" to="/blog">Blog</g-link>
+      <g-link class="nav__link" to="/about" data-content="About">About</g-link>
+      <g-link class="nav__link" to="/projects" data-content="Projects"
+        >Projects</g-link
+      >
+      <g-link class="nav__link" to="/blog" data-content="Blog">Blog</g-link>
       <div
         class="nav__right__burger"
         v-if="$mq === 'sm'"
@@ -49,7 +51,7 @@ export default {
 
 <style lang="scss" scoped>
 nav {
-  background-color: white;
+  background-color: black;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -61,7 +63,37 @@ nav {
   }
   .nav__right {
     a {
-      color: black;
+      color: white;
+      position: relative;
+      padding: 10px 10px;
+      &::before {
+        position: absolute;
+        content: attr(data-content);
+        color: black;
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+        transition: clip-path 0.3s ease;
+      }
+      &::after {
+        content: "";
+        height: 26px;
+        width: 0px;
+        background-color: rgb(255, 238, 0);
+        position: absolute;
+        left: 0;
+        transition: width 0.3s ease;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:hover {
+        &::before {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        &::after {
+          width: 100%;
+        }
+      }
     }
     &.lg {
       a {
@@ -79,7 +111,6 @@ nav {
     padding-right: 60px;
   }
   &.sm {
-    background-color: black;
     padding-left: 30px;
     padding-right: 30px;
     .nav__right {

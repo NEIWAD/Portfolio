@@ -34,6 +34,7 @@ query {
     top: 0;
     width: 100%;
     box-sizing: border-box;
+    z-index: 100;
   }
   .layout__content {
     min-height: 100vh;
