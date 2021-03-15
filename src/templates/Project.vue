@@ -60,5 +60,10 @@ export default {
   .project__left {
     width: calc(100% - 300px);
   }
+  &.md {
+    .project__left {
+      width: 100%;
+    }
+  }
 }
 </style>

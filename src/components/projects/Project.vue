@@ -2,8 +2,8 @@
   <g-link :to="project.path" class="project-card">
     <div class="project-card__title">
       <h2>{{ project.title }}</h2>
-      <p class="project-card__title__date">
-        {{ project.start | moment("YYYY-MM") }}
+      <p class="project-card__title__mandat">
+        {{ project.mandate ? project.mandate : "Personnal" }}
       </p>
     </div>
     <div class="project-card__tags" :class="$mq">
@@ -42,13 +42,15 @@ export default {
   .project-card__title {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
     h2 {
       font-size: 30px;
     }
-    .project-card__title__date {
+    .project-card__title__mandat {
       font-size: 13px;
       color: #d6d6d6;
+      font-style: italic;
+      text-transform: uppercase;
     }
   }
   .project-card__tags {

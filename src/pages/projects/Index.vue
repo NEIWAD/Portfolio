@@ -24,6 +24,7 @@ query {
         title
         description
         path
+        mandate
         tags{
           id
           name

@@ -1,5 +1,5 @@
 <template>
-  <div class="project__right">
+  <div class="project__right" :class="$mq">
     <div class="project__right__item">
       <h3>Tech</h3>
       <div class="project__right__tags">
@@ -43,10 +43,6 @@
 
 <style lang="scss" scoped>
 .project__right {
-  position: fixed;
-  top: 100px;
-  width: 250px;
-  right: 160px;
   border: 6px solid black;
   background-color: $yellow;
   box-sizing: border-box;
@@ -79,6 +75,15 @@
     .project__right__item__links__item {
       color: white;
     }
+  }
+  &.lg {
+    position: fixed;
+    top: 100px;
+    width: 250px;
+    right: 160px;
+  }
+  &.md {
+    position: relative;
   }
 }
 </style>
